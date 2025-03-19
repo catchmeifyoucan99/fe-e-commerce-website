@@ -1,0 +1,78 @@
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Node.js (Frontend)
+node_modules/
+dist/
+dist-ssr/
+*.local
+
+# Build files (Frontend)
+client/node_modules/
+client/dist/
+client/.env
+
+# Build files (Spring Boot)
+server/target/
+server/bin/
+server/build/
+server/out/
+
+# Dependency directories (Java & Node.js)
+**/node_modules/
+**/target/
+**/bin/
+**/build/
+**/out/
+
+# Java dependencies
+.mvn/
+**/.mvn/
+**/pom.xml.tag
+**/pom.xml.releaseBackup
+**/dependency-reduced-pom.xml
+**/release.properties
+**/target/
+
+# Gradle
+.gradle/
+**/.gradle
+gradle-app.setting
+gradle-wrapper.jar
+gradlew
+gradlew.bat
+
+# IDE settings (Eclipse, IntelliJ, VSCode)
+.vscode/
+.idea/
+*.iml
+*.ipr
+*.iws
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Spring Boot configuration
+server/.env
+server/application.properties
+server/application.yml
+server/application-dev.properties
+server/application-prod.properties
