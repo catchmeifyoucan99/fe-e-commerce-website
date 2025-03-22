@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import React, { useCallback, useEffect, useRef } from 'react';
 import { closeModal } from '../../../core/store/auth/modalSlice.jsx';
 import InputField from '../components/ui/InputField.jsx';
+import ModalStyle from '../components/ui/ModalStyle.jsx';
+import Checkbox from '../components/ui/Checkbox.jsx';
 
 const LoginModal = () => {
   const dispatch = useDispatch();
@@ -30,49 +32,32 @@ const LoginModal = () => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
-      {/* Background hình ảnh */}
-      <div
-        className="absolute inset-0 bg-cover bg-center opacity-30"
-        style={{ backgroundImage: `url('/images/background.jpg')` }}
-      ></div>
-
+    <div className="fixed inset-0 bg-black/70 flex justify-center items-center">
       {/* Modal content */}
-      <div
-        ref={modalRef}
-        className="bg-white p-8 rounded-lg shadow-2xl w-96 relative z-10"
-      >
-        <h2 className="text-2xl font-bold mb-6 text-center text-gray-800">Đăng nhập</h2>
+      <ModalStyle ref={modalRef}>
+        <span className="flex text-xl font-medium mb-9">
+          Register with your e-mail
+        </span>
+        <InputField label="USERNAME (*)" placeholder="Username"/>
+        <InputField label="EMAIL (*)" placeholder="E-mail"/>
+        <div className="flex justify-between space-x-3">
+          <InputField label="PASSWORD (*)" placeholder="Password"/>
+          <InputField label="REPEAT PASSWORD (*)" placeholder="Repeat Password"/>
+        </div>
+        <span className="text-sm font-normal mb-4 text-left">
+          HL With You may keep me informed with personalized emails about products and services. See our
+          {' '}
+          <span className="font-medium">Privacy Policy</span>
+          {' '}
+          for more details.
+        </span>
+        <Checkbox>
 
-        {/* Email Input */}
-        <InputField
-          label="Email"
-          type="text"
-          placeholder="Nhập email của bạn"
-        />
-
-        {/* Password Input */}
-        <InputField
-          label="Mật khẩu"
-          type="password"
-          placeholder="Nhập mật khẩu của bạn"
-        />
-
-        {/* Login Button */}
-        <Button
-          className="bg-blue-600 text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
-        >
-          Đăng nhập
+        </Checkbox>
+        <Button className="py-6">
+          <span className="text-lg">Create Account</span>
         </Button>
-
-        {/* Close Button */}
-        <Button
-          className="mt-4 text-sm text-gray-600 hover:text-gray-800 focus:outline-none"
-          onClick={() => dispatch(closeModal())}
-        >
-          Đóng
-        </Button>
-      </div>
+      </ModalStyle>
     </div>
   );
 };
