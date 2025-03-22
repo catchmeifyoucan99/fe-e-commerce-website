@@ -7,7 +7,7 @@ const Checkbox = ({ label, checked, onChange }) => {
         type="checkbox"
         checked={checked}
         onChange={onChange}
-        className="form-checkbox h-5 w-5 "
+        className="form-checkbox h-5 w-5 cursor-pointer"
       />
       {label && <label className="ml-2 text-sm text-gray-700">{label}</label>}
     </div>
